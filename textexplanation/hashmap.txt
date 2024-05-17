@@ -1,0 +1,82 @@
+#include<iostream>
+#include<map>
+using namespace std;
+
+int main(){
+    int size;
+    cout<<"enter the size of the array: ";
+    cin>>size;
+    int arr[size];
+    for(int i=0;i<size;i++){
+        cout<<"enter the element "<<i+1<<": ";
+        cin>>arr[i];
+    }
+
+    /*  EXAMPLE:
+        here it iterates through each element of array. Ex. arr = [1,2,3,1,3].
+        
+        Key   : Value
+        ------------
+        1     : 2
+        2     : 1
+        3     : 2
+
+    */
+
+    map<int,int> mpp;
+    for(int i=0;i<size;i++){
+        mpp[arr[i]]++;
+    }
+
+    int q;
+    cout<<"How many queries you wanna ask?: ";
+    cin>>q;
+    cout<<"enter the queries: ";
+    while(q--){
+        int number;
+        cin>>number;
+        cout<<mpp[number]<<endl;
+    }
+    return 0;
+}
+
+map<int,int> mpp;
+Here, you're declaring a std::map named mpp.
+It's a map that associates integer keys with integer values. In this context, 
+it will be used to store the frequency of each integer element in the array.
+
+for(int i=0;i<size;i++){
+    mpp[arr[i]]++;
+}
+
+This loop iterates over each element of the array arr.
+For each element arr[i], it accesses the corresponding value in the map mpp using arr[i] as the key.
+If the key arr[i] doesn't exist in the map, it's automatically inserted with a default value of 0.
+Then, mpp[arr[i]]++ increments the value associated with the key arr[i] by 1.
+This effectively counts the frequency of each element in the array.
+Let's illustrate with an example:
+
+Suppose size = 5 and arr = {1, 3, 2, 1, 3}.
+
+After the loop executes:
+
+mpp[1] will be incremented twice, as there are two occurrences of 1 in the array.
+mpp[2] will be incremented once.
+mpp[3] will be incremented twice.
+So, the mpp map would look like this:
+
+Key   : Value
+------------
+1     : 2
+2     : 1
+3     : 2
+
+Then, it fetches the value associated with the key number from the map mpp using the syntax mpp[number].
+
+cout << "enter the queries: ";
+while (q--) {
+    int number;
+    cin >> number;
+    cout << mpp[number] << endl; -- it fetches here.
+}
+
