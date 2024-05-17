@@ -3,7 +3,7 @@
     for ex - 
     for an array - [13,46,24,52,20,9]
     1st step - The minimum element is = 9. therefore, new array is: [9,46,24,52,20,13]
-    note the 13 takes place of 9.
+    note the 9 takes place of 13 and moves to end in place of 9.
     step 2 - [9,13,24,52,20,46], 13 replaces 46 and vice versa.
     step 3 - [9,13,20,52,24,46], 20 replaces 24 as the 3rd minimum element.
     step 4 - [9,13,20,24,52,46], 24 replaces 52.
